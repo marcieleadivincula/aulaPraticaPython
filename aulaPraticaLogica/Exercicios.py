@@ -36,19 +36,19 @@
 # else:
 #     print('Ao menos um dos valores digitados não servem para formar um triângulo!')
 
-# Exercício 2
-# Escreva um algoritmo que leia dois valores numéricos e que pergunte ao usuário qual operação ele deseja realizar: adição(+), subtração(-), multiplicação(*) ou divisão(/). Exiba na tela o resultado da operação desejada(exercício da apostila - aula 3).
-numero1 = float(input('Digite o 1ª número: '))
-numero2 = float(input('Digite o 2ª número: '))
-operacao = input('Qual operação deseja realizar: adição(+), subtração(-), multiplicação(*) ou divisão(/)? ')
-if(operacao == '+'):
-    print(numero1 + numero2)
-elif(operacao == '-'):
-    print(numero1 - numero2)
-elif(operacao == '*'):
-    print(numero1 * numero2)
-elif(operacao == '/'):
-    print(numero1 / numero2)
-else:
-    print('Operação inválida! Tente novamente!')
+# # Exercício 2
+# # Escreva um algoritmo que leia dois valores numéricos e que pergunte ao usuário qual operação ele deseja realizar: adição(+), subtração(-), multiplicação(*) ou divisão(/). Exiba na tela o resultado da operação desejada(exercício da apostila - aula 3).
+# numero1 = float(input('Digite o 1ª número: '))
+# numero2 = float(input('Digite o 2ª número: '))
+# operacao = input('Qual operação deseja realizar: adição(+), subtração(-), multiplicação(*) ou divisão(/)? ')
+# if(operacao == '+'):
+#     print(numero1 + numero2)
+# elif(operacao == '-'):
+#     print(numero1 - numero2)
+# elif(operacao == '*'):
+#     print(numero1 * numero2)
+# elif(operacao == '/'):
+#     print(numero1 / numero2)
+# else:
+#     print('Operação inválida! Tente novamente!')
 
