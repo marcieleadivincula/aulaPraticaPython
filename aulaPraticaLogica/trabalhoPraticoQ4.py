@@ -5,11 +5,11 @@ codigo_peca = 0
 # Fim das variáveis globais
 
 # Início da função cadastrar_peca()
-def cadastrarPeca(codigo):
+def cadastrar_peca(codigo):
     print('Bem-vindo ao menu Cadastrar Peça')
     print('Código da peça: {}'.format(codigo))
-    nome = input('Entre com o NOME da peça: ')
-    fabricante = input('Entre com o FABRICANTE da peça: ')
+    nome = input('Entre com o NOME da peça: ').upper()
+    fabricante = input('Entre com o FABRICANTE da peça: ').upper()
     preco = int(input('Entre com o PREÇO(R$) da peça: '))
     dicionario_peca = {
         'codigo': codigo,
@@ -21,7 +21,7 @@ def cadastrarPeca(codigo):
 
 
 # Início da função consultar_peca()
-def consultarPeca():
+def consultar_peca():
     print('Bem-vindo ao menu Consultar Peça')
     while True:
         try:
@@ -51,7 +51,7 @@ def consultarPeca():
                         print('-' * 10)
             elif opcao_consultar == '3':
                 print('Você escolheu a opção consultar produto(s) por FABRICANTE')
-                fabricante_desejado = input('Entre com o FABRICANTE desejado: ')
+                fabricante_desejado = input('Entre com o FABRICANTE desejado: ').upper()
                 for peca in lista_peca:
                     # o valor do campo código desse dicionário é igual ao valor desejado
                     if peca['fabricante'] == fabricante_desejado:
@@ -76,32 +76,21 @@ def consultarPeca():
 
 
 # Início da função remover_peca()
-def removerPeca():
+def remover_peca():
     print('Bem-vindo ao menu REMOVER peça')
-    while True:
-        try:
-            valor_desejado = int(input('Entre com o CÓDIGO da peça que desejado remover: '))
-            for peca in lista_peca:
-                # verifica se o valor do campo código desse dicionário é igual ao valor desejado
-                if peca['codigo'] == valor_desejado:
-                    lista_peca.remove(peca)
-                    print('Peça {} removida com sucesso!'.format(peca['codigo']))
-                else:
-                    print('Código digitado inexistente!')
-                    print('Por favor, entre com o código desejado novamente')
-                    continue
-        except ValueError:
-            # Tratamento para caso o usuário digite uma valor não numérico
-            print('Você digitou algum valor não numérico!')
-            print('Por favor, entre com o código desejado novamente')
-            continue
+    valor_desejado = int(input('Entre com o CÓDIGO da peça que desejado remover: '))
+    for peca in lista_peca:
+        # verifica se o valor do campo código desse dicionário é igual ao valor desejado
+        if peca['codigo'] == valor_desejado:
+            lista_peca.remove(peca)
+            print('Peça de código {} removida com sucesso!'.format(peca['codigo']))
 # Fim da função remover_peca()
 
 
 # Início do Main
-print('Bem-vindo à bicicletaria da Marciele Almeida Adivíncula S.A.')
 while True:
     try:
+        print('Bem-vindo à bicicletaria da Marciele Almeida Adivíncula S.A.')
         menu = input('\nEscolha a opção desejada:\n'
                                 '1 - Cadastrar Peça\n' +
                                 '2 - Consultar Peça\n' +
@@ -110,11 +99,11 @@ while True:
                                 '>>')
         if menu == '1':
             codigo_peca += 1
-            cadastrarPeca(codigo_peca)
+            cadastrar_peca(codigo_peca)
         elif menu == '2':
-            consultarPeca()
+            consultar_peca()
         elif menu == '3':
-            removerPeca()
+            remover_peca()
         elif menu == '4':
             print('Programa encerrado com sucesso...')
             break
