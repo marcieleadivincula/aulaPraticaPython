@@ -4,26 +4,26 @@ def dimensoes_objeto():
     # Valida as dimensões do objeto:
     while True:
         try:
-            comprimento = int(input('Digite o comprimento do objeto(em cm): '))
-            largura = int(input('Digite a largura do objeto(em cm): '))
-            altura = int(input('Digite a altura do objeto(em cm): '))
+            comprimento = int(input('Digite o COMPRIMENTO do objeto(em cm): '))
+            largura = int(input('Digite a LARGURA do objeto(em cm): '))
+            altura = int(input('Digite a ALTURA do objeto(em cm): '))
             volume = comprimento * largura * altura
 
             if volume < 1000:
-                print('O volume do objeto(em cm3) é: {}'.format(volume))
+                print('O volume do objeto(em cm3) é: {:.1f}'.format(volume))
                 return 10.0
             elif 1000 <= volume < 10000:
-                print('O volume do objeto(em cm3) é: {}'.format(volume))
+                print('O volume do objeto(em cm3) é: {:.1f}'.format(volume))
                 return 20.0
             elif 10000 <= volume < 30000:
-                print('O volume do objeto(em cm3) é: {}'.format(volume))
+                print('O volume do objeto(em cm3) é: {:.1f}'.format(volume))
                 return 30.0
             elif 30000 <= volume < 100000:
-                print('O volume do objeto(em cm3) é: {}'.format(volume))
+                print('O volume do objeto(em cm3) é: {:.1f}'.format(volume))
                 return 50.0
             elif volume >= 100000:
                 # Volume maior e igual à 100000 não é aceito
-                print('O volume do objeto(em cm3) é: {}'.format(volume))
+                print('O volume do objeto(em cm3) é: {:.1f}'.format(volume))
                 print('Não aceitamos objetos com dimensões tão grandes!')
                 print('Por favor, entre com as dimensões desejadas novamente!')
                 continue
@@ -40,22 +40,22 @@ def peso_objeto():
     # Valida o peso do objeto:
     while True:
         try:
-            peso_digitado = int(input('Digite o peso do objeto(em kg): '))
+            peso_digitado = int(input('Digite o PESO do objeto(em kg): '))
             if peso_digitado <= 0.1:
                 multpeso = 1.0
-                print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
+                # print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
                 return multpeso
             elif 0.1 <= peso_digitado < 1:
                 multpeso = 1.5
-                print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
+                # print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
                 return multpeso
             elif 1 <= peso_digitado < 10:
                 multpeso = 2.0
-                print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
+                # print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
                 return multpeso
             elif 10 <= peso_digitado < 30:
                 multpeso = 3.0
-                print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
+                # print('PESO: {} * MULTIPLICADOR: {} = {}'.format(peso_digitado, multpeso, peso_digitado * multpeso))
                 return multpeso
             elif peso >= 30:
                 # Peso maior e igual à 30 não é aceito
@@ -75,7 +75,7 @@ def rota_objeto():
     # Verifica a rota selecionada:
     while True:
         try:
-            rota_selecionada = input('Selecione a rota:\n' +
+            rota_selecionada = input('Selecione a ROTA:\n' +
                          'BR - De Brasília para Rio de Janeiro\n' +
                          'BS - De Brasília para São Paulo\n' +
                          'RB - De Rio de Janeiro para Brasília\n' +
@@ -85,27 +85,27 @@ def rota_objeto():
                          '>>')
             if rota_selecionada.upper() == 'BR':
                 multrota = 1.5
-                print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
+                # print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
                 return multrota
             elif rota_selecionada.upper() == 'BS':
                 multrota = 1.2
-                print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
+                # print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
                 return multrota
             elif rota_selecionada.upper() == 'RB':
                 multrota = 1.5
-                print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
+                # print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
                 return multrota
             elif rota_selecionada == 'RS':
                 multrota = 1.0
-                print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
+                # print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
                 return multrota
             elif rota_selecionada.upper() == 'SR':
                 multrota = 1.0
-                print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
+                # print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
                 return multrota
             elif rota_selecionada.upper() == 'SB':
                 multrota = 1.2
-                print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
+                # print('O multiplicador da rota {} é {}'.format(rota_selecionada, multrota))
                 return multrota
             else:
                 print('Você digitou uma rota que não existe!')
